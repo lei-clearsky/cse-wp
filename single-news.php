@@ -9,7 +9,8 @@
   </div>
 
   <div class="container">
-    <div class="sixteen columns" style="margin-top:20px;">
+    <div class="sixteen clearfix" style="margin-top:20px;">
+      <div class="twelve columns alpha">
 
 		<?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
 
@@ -19,6 +20,11 @@
 		<?php endwhile; else: ?>
       <p>There are no news here</p>
     <?php endif; ?>
+
+      </div>
+      <div class="four columns omega">
+        <?php get_sidebar() ?>
+      </div>
     
   </div>
 	</div><!-- .container-->
