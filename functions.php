@@ -85,17 +85,43 @@ function college_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+
+	create_widget('Left Footer', 'footer_left', 'Displays in the bottom left of footer');
+	create_widget('Middle Footer', 'footer_middle', 'Displays in the bottom middle of footer');
+	create_widget('Right Footer', 'footer_right', 'Displays in the bottom right of footer');
+
 }
+
 add_action( 'widgets_init', 'college_widgets_init' );
+
+function create_widget($name, $id, $description){
+	$args = array(
+		'name'          => __( $name ),
+		'id'            => $id,
+		'description'   => $description,
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>' 
+	);
+	register_sidebar( $args );
+}
 
 /**
  * Enqueue scripts and styles.
  */
 function college_scripts() {
 	
-	wp_enqueue_style( 'college-base', get_template_directory_uri() . '/base.css');
-	wp_enqueue_style( 'college-flexslider', get_template_directory_uri() . '/flexslider_r.css');
+	wp_enqueue_style( 'college-base', get_template_directory_uri() . '/css/base.css');
 	wp_enqueue_style( 'college-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'googlefonts-osc', "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+	wp_enqueue_style( 'googlefonts-os', "https://fonts.googleapis.com/css?family=Open+Sans");
+
+	wp_register_style('college-flexslider', get_template_directory_uri() . '/css/flexslider_r.css');
+	if(is_page('home-cse')){
+		wp_enqueue_style( 'college-flexslider');
+
+	}
 
 	wp_enqueue_script( 'college-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'college-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js', array(), '20120206', true );
