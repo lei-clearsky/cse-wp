@@ -6,7 +6,7 @@
 *
 * Copyright 2011 @louis_remi
 * Licensed under the MIT license.
-
+*/
 
 var $event = $.event,
 $special,
@@ -39,8 +39,8 @@ $special = $event.special.debouncedresize = {
   },
   threshold: 250
 };
-*/
-/*
+
+
 // ======================= imagesLoaded Plugin ===============================
 // https://github.com/desandro/imagesloaded
 
@@ -162,7 +162,7 @@ $.fn.imagesLoaded = function( callback ) {
 
   return deferred ? deferred.promise( $this ) : $this;
 };
-*/
+
 var Grid = (function($) {
 
     // list of items

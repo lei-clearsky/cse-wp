@@ -83,6 +83,7 @@
         </form>
     </div>
     <div class="sixteen columns">
+      <?php get_template_part('content','megamenu2'); ?>
       <nav id="cbp-hrmenu" class="cbp-hrmenu">
           <ul>
             <li>

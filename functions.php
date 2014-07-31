@@ -44,6 +44,9 @@ function college_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'college' ),
 	) );
+	//register_nav_menus( array(
+	//	'primary' => __( 'Primary Menu', 'Test Menu 1' ),
+	//) );
 	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -127,6 +130,7 @@ function college_scripts() {
 	wp_enqueue_script( 'college-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js', array(), '20120206', true );
 	wp_enqueue_script( 'college-expand', get_template_directory_uri() . '/js/catalog-expand.js', array('jquery'), '20120206', true );
 	wp_enqueue_script( 'college-application', get_template_directory_uri() . '/js/application.js', array('jquery'), '20120206', true );
+
 
 
 	wp_enqueue_script( 'college-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
