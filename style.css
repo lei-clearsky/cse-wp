@@ -39,23 +39,37 @@ font-family: 'Open Sans Condensed', sans-serif;
 font-size: 16px;
 }
 
-/* ------ First Level --------- */
+/* ------ First Level --------- 
 .side-nav ul li{list-style-type:none;list-style-image:none; margin-bottom:0px;}
 .side-nav ul li a{font-size: 18px; text-decoration:none; background-color: #D4E7F0;color:#022253; padding: 10px 10px 10px 20px; display:block;border-bottom: solid 1px #fff;
 }
 .side-nav ul li a:hover{background-color: #6394bf;}
 .side-nav ul li.active a{background-color: #6394bf;}
-
-/* ------ Second Level ----- */
+*/
+.side-nav ul li{list-style-type:none;list-style-image:none; margin-bottom:0px;}
+.side-nav ul li a{font-size: 18px; text-decoration:none; background-color: #D4E7F0;color:#022253; padding: 10px 10px 10px 20px; display:block;border-bottom: solid 1px #fff;
+}
+.side-nav ul li a:hover{background-color: #6394bf;}
+.side-nav ul li.current_page_item > a{background-color: #6394bf;}
+/* ------ Second Level ----- 
 .side-nav ul li.active li{font-size:100%;}
 .side-nav ul li.active li a{font-weight:normal; color:#022253; background-color: #B4D5E5; xwidth: 165px; border-left: solid 10px #fff;height:auto; padding: 10px 10px 10px 20px; display:block; line-height:116%;}
 .side-nav ul li.active li a:hover{background-color: #6394bf;}
 .side-nav ul li.active li.active a{background-color: #6394bf;}
+*/
+.side-nav ul li li{font-size:100%;}
+.side-nav ul li li a{font-weight:normal; color:#022253; background-color: #B4D5E5; xwidth: 165px; border-left: solid 10px #fff;height:auto; padding: 10px 10px 10px 20px; display:block; line-height:116%;}
+.side-nav ul li li a:hover{background-color: #6394bf;}
+.side-nav ul li li.current_page_item > a{background-color: #6394bf;}
 
-/* ------- Third Level ----- */
+/* ------- Third Level ----- 
 .side-nav ul li.active li.active li a{color:#000; font-weight:normal; padding: 10px 10px 10px 20px; border-left: 20px solid #fff; background-color:#E8F1F5;}
 .side-nav ul li.active li.active li.active a{background: #6394bf;}
 .side-nav ul li.active li.active li a:hover{background: #6394bf;}
+*/
+.side-nav ul li li li a{color:#000; font-weight:normal; padding: 10px 10px 10px 20px; border-left: 20px solid #fff; background-color:#E8F1F5;}
+.side-nav ul li li li.current_page_item > a{background: #6394bf;}
+.side-nav ul li li li a:hover{background: #6394bf;}
 
 /* ------- 4th Level ----- */
 .side-nav ul li.active li.active li.active li a{font-weight:normal; color:#999; padding:5px 10px 5px 60px; }
@@ -817,12 +831,12 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
   color:#fff;
 }
 /*Search Bar - Mobile*/
-.search {
+.site-search {
   display:none;
   width:100%;
 }
 
-.search input[type="text"] {
+.site-search input[type="text"] {
     background-size: 25px 25px;
     border: 1px solid #d1d1d1;
     color: #bebebe;
@@ -842,13 +856,13 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
   width:100%;
 }
 
-.searchTop input[type="text"] {
+.searchTop input[type="search"] {
     background-size: 25px 25px;
     border: 1px solid #d1d1d1;
     color: #bebebe;
     width: 40%;
     float:right;
-    margin-top:27px;
+    margin-top:30px;
     padding: 6px 15px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -1031,7 +1045,7 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
     opacity: .8;
     filter: alpha(opacity=80); /* For IE8 and earlier */
   }
-  .search {
+  .site-search {
   display:none;
   width:100%;
   }
@@ -1039,13 +1053,13 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
   display:block;
   width:100%;
   }
-  .searchTop input[type="text"] {
+  .searchTop input[type="search"] {
     background-size: 25px 25px;
     border: 1px solid #d1d1d1;
     color: #bebebe;
     width: 32%;
     float:right;
-    margin-top:27px;
+    margin-top:30px;
     padding: 6px 15px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -1516,7 +1530,7 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
     width:50%;
     margin:0 auto;
   }
-  .search input[type="text"] {
+  .site-search input[type="text"] {
     width: 83%;
     margin: 1% 0;
   }
@@ -1820,7 +1834,7 @@ filter: alpha(opacity=80); /* For IE8 and earlier */
 .noMargin{margin-left:0px; margin-right:0px;}
 
 /* Catalog Testing */
-<style>
+
 /* catalog programs */
 #buttons button{
   background-color: #5a5858;
@@ -1955,7 +1969,11 @@ border: solid transparent;
 .program-description{
 padding: 0 40px 0 20px;
 }
-program-offerings{
+.program-description h3,
+.program-description p{
+  color: #000;
+}
+.program-offerings{
 max-height:100%;
 max-width:100%;
 }

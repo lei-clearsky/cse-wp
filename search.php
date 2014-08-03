@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Search Page
  * The template for displaying search results pages.
  *
  * @package College
@@ -7,13 +8,20 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="headerWrap2" style = "background-color: #6394bf; padding: 10px;">
+    <div class="container">
+      <div class="sixteen columns">
+        <?php the_title( '<h3>', '</h3>' ); ?>  
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sixteen columns" style="margin-top:20px;">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'college' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'college' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -38,8 +46,8 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		</div>
+	</div><!-- .container-->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

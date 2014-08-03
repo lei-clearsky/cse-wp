@@ -43,7 +43,9 @@ function college_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'college' ),
+
 	) );
+
 	//register_nav_menus( array(
 	//	'primary' => __( 'Primary Menu', 'Test Menu 1' ),
 	//) );
@@ -110,6 +112,12 @@ function create_widget($name, $id, $description){
 	register_sidebar( $args );
 }
 
+add_action( 'wp_footer', 'test_content_filter' );
+function test_content_filter( $content ) {
+	echo "Life is awesome!<br />";
+}
+
+
 /**
  * Enqueue scripts and styles.
  */
@@ -165,3 +173,67 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+class College_Subpages extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array('classname' => 'widget_test', 'description' => __( 'A test widget.') );
+		parent::__construct('test_widget', __('Test'), $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		// Adds $before_widget, $before_title, $after_title, $after_widget variables
+		extract( $args );
+		// var_dump( $args );
+
+		if ( ! is_page() ) {
+			return;
+		}
+
+		$subpages = get_posts(
+			array(
+				'post_type' => 'page',
+				'numberposts' => -1,
+				'post_parent' => get_the_ID(),
+				'order_by' => 'menu_order',
+			)
+		);
+
+		if ( ! $subpages ) {
+			return;
+		}
+
+		$title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Pages' ) : $instance['title'], $instance, $this->id_base);
+		$test_field = empty( $instance['test_field'] ) ? 'world' : $instance['test_field'];
+
+		$out = 'Hello ' . esc_html( $instance['test_field'] );
+
+		if ( !empty( $out ) ) {
+			echo $before_widget;
+			if ( $title ) {
+				echo $before_title . $title . $after_title;
+			}
+		
+			echo $out; 
+
+			if ( is_singular() && 'post' == get_post_type() ) {
+				$post = get_post();
+				echo 'The title is: ' . $post->post_name;
+			}
+
+			echo $after_widget;
+		}
+	}
+
+	function update( $new_instance, $old_instance ) {
+		return array();
+	}
+
+	function form( $instance ) {
+	?>
+		<p>?php _e('There are no available options for this widget.'); ?></p>
+	<?php
+	}
+
+}
