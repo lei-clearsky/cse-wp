@@ -119,8 +119,6 @@ $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) )
 			if ( !($menuitems[ $count + 1 ]->menu_item_parent)): ?>
 				</li> 
 			<?php $submenu = false; endif; ?>
-
-
   
 		<?php $count++; endforeach; ?>
   

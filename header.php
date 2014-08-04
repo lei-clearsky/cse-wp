@@ -46,7 +46,7 @@
   <div class="container">
     <div class="container">
       <div class="eight columns">
-        <div id="cseLogo"><a href=" http://localhost:8888/wordpress-test/" title="CSE Homepage"><img src="http://cmsdev2.cse.edu/global/images/home/CSE-Header-Logo.png" alt="CSE Homepage"></a></div>              
+        <div id="cseLogo"><a href=" <?php echo esc_url( home_url( '/' ) ); ?>" title="CSE Homepage"><img src="http://cmsdev2.cse.edu/global/images/home/CSE-Header-Logo.png" alt="CSE Homepage"></a></div>              
       </div>
       
       <div class="eight columns">           
