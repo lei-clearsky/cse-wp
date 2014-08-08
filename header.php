@@ -52,7 +52,7 @@
       <div class="eight columns">           
         <div class="circleCenter">      
           <div class="circle"><div class="text"><a href="/alumni/">Give</a></div></div>
-          <div class="circle"><div class="text"><a href="/calendar/">Events</a></div></div>
+          <div class="circle"><div class="text"><a href="/wordpress-test/calendar/">Events</a></div></div>
           <div class="circle"><div class="text"><a href="/apply/">Apply</a></div></div>
         </div> 
         <!-- Search Form --> 

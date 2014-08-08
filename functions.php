@@ -94,6 +94,7 @@ function college_widgets_init() {
 	create_widget('Left Footer', 'footer_left', 'Displays in the bottom left of footer');
 	create_widget('Middle Footer', 'footer_middle', 'Displays in the bottom middle of footer');
 	create_widget('Right Footer', 'footer_right', 'Displays in the bottom right of footer');
+	create_widget('Home Upcoming Events', 'home_upcoming_events', 'Displays in the homepage upcoming events section');
 
 }
 
