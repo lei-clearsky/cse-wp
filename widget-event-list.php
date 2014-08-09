@@ -46,11 +46,29 @@ $classes = $eo_event_loop_args['class'];
 			?>
 			<div class="eventSideBox">
 				<div class="leftC">
-					<?php echo __('on','eventorganiser') . ' '.eo_get_the_start($format); ?>
+					<div class="month">
+						<?php echo eo_get_the_start('M'); ?>
+					</div>
+					<div class="day">
+						<?php echo eo_get_the_start('j'); ?>
+					</div>
+					<div class="weekday">
+						<?php echo eo_get_the_start('D'); ?>
+					</div>
 				</div>
 				<div class="eventInfo">
 					<h4><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h4>
-					<p><?php if( eo_get_venue() ){ ?>
+					<p>
+						<?php if (eo_is_all_day()){ ?>
+							
+							<strong><?php echo "All-day event"; ?></strong><br />
+				
+						<?php }else{ ?>
+
+							<strong><?php echo eo_get_the_start('g:i A'); ?></strong><br />
+						<?php } ?>
+						
+					<?php if( eo_get_venue() ){ ?>
 						<strong><?php _e('Venue','eventorganiser'); ?>:</strong> <a href="<?php eo_venue_link(); ?>"> <?php eo_venue_name(); ?></a><?php } ?>
 					</p>
 				</div>
