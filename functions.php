@@ -75,6 +75,8 @@ function college_setup() {
 endif; // college_setup
 add_action( 'after_setup_theme', 'college_setup' );
 
+
+
 /**
  * Register widget area.
  *
